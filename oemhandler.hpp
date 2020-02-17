@@ -24,6 +24,7 @@ enum ipmi_netfn_oem_cmds
     IPMI_CMD_BMC_FACTORY_RESET = 0x11,
     IPMI_CMD_PESEL = 0xF0,
     IPMI_CMD_OCC_RESET = 0x0E,
+    IPMI_CMD_DETECT_RISERF_MODE = 0x01,
 };
 
 /** @brief Read eSEL data into a string
@@ -46,6 +47,9 @@ ipmi_ret_t ipmi_ibm_oem_partial_esel(ipmi_netfn_t netfn, ipmi_cmd_t cmd,
                                      ipmi_data_len_t data_len,
                                      ipmi_context_t context);
 
+ipmi_ret_t ipmi_wistron_detect_riserf(ipmi_netfn_t netfn, ipmi_cmd_t cmd,
+                              ipmi_request_t request, ipmi_response_t response,
+                              ipmi_data_len_t data_len, ipmi_context_t context);
 struct esel_request_t
 {
     uint16_t resid;

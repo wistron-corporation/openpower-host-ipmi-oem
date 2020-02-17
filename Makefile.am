@@ -2,12 +2,14 @@ liboemhandlerdir = ${libdir}/ipmid-providers
 liboemhandler_LTLIBRARIES = liboemhandler.la
 
 liboemhandler_la_SOURCES = oemhandler.cpp \
+                           smbus.cpp \
                            host-interface.cpp \
                            org/open_power/OCC/Metrics/error.cpp \
                            inventory-sensor.cpp
 
 BUILT_SOURCES = org/open_power/OCC/Metrics/error.hpp \
                 org/open_power/OCC/Metrics/error.cpp \
+                smbus.cpp \
                 inventory-sensor.cpp
 
 CLEANFILES = $(BUILT_SOURCES)
